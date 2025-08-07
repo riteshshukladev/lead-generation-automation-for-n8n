@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User tokens - only accessible by the user themselves
+    match /user_tokens/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Email logs - only accessible by the user themselves  
+    match /email_logs/{userId}/emails/{emailId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // System logs - only accessible by service account
+    match /system_logs/{document=**} {
+      allow read, write: if request.auth.token.email.matches(".*@n8n-gmail-automation-468307.iam.gserviceaccount.com");
+    }
+  }
+}
