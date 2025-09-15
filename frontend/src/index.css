@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-instrument: "Instrument Sans", sans-serif;
+  --color-bg-primary: #efefef;
+  --color-bg-success: #497619;
+  --color-bg-error: #f47e7e;
+}
+
+:root {
+  font-family: var(--font-instrument); /* Use the CSS variable */
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  /* display: flex; */
+  /* place-items: center; */
+  /* min-width: 320px; */
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 16px;
+  border: 1px solid black;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  button {
+    padding: 0.75em 1em;
+    font-size: 0.8em;
+    border-radius: 12px;
+  }
+}
+button:hover {
+  border-color: black;
+  opacity: 50;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
