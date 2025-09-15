@@ -71,7 +71,7 @@ node_modules/
 
 # Add this to .gitignore
 node_modules/
-.env
+.env*
 *.log
 .DS_Store
 functions/lib/
