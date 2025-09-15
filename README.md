@@ -168,6 +168,4 @@ firebase deploy --only functions
 - **CORS:** add your origin to CORS list in `index.js`
 - **OAuth failures:** confirm `GOOGLE_CLIENT_ID`/`SECRET` in `.env`, and `redirectUri` matches `${window.location.origin}/auth/callback` used in `gmailService`
 
-## License
 
-Add a LICENSE file if you want to open source
